@@ -60,6 +60,7 @@ jobs:
 
     - name: Prepare kos folder
       run: |
+        export KOS_PATH=/opt/toolchains/dc
         tar -zcvf kos-${{matrix.os[0]}}.tar.gz ${KOS_PATH}
 
     - uses: actions/upload-artifact@v3
