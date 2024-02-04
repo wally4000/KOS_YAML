@@ -52,8 +52,8 @@ jobs:
         run: | 
           cd ${GIT_BASE}/utils/dc-chain
           mv ${GIT_BASE}/utils/dc-chain/config/config.mk.stable.sample ${GIT_BASE}/utils/dc-chain/config.mk
-          make -j$(getconf _NPROCESSORS_ONLN)
-          make -j$(getconf _NPROCESSORS_ONLN) gdb
+          make -j$(getconf _NPROCESSORS_ONLN) build-sh4 #Full make builds arm compiler for sound processor, not required unless hardware testing
+          make  -j$(getconf _NPROCESSORS_ONLN) gdb
           make clean
 
       - name: Build KOS
