@@ -2,21 +2,24 @@ name: CI
 
 on:
   workflow_dispatch
+  
 env: 
   GIT_BASE: /opt/toolchains/dc/kos
   KOS_PATH: /opt/toolchains/dc
 
-  push:
-  pull_request:
-  repository_dispatch:
-    types: [run_build]
+  # push:
+  # pull_request:
+  # repository_dispatch:
+  #   types: [run_build]
 
 jobs:
   build:
     runs-on: ${{ matrix.os[0] }}
     strategy:
       matrix:
-        os:  [[ubuntu-latest, bash], [macos-latest, bash]]
+        os:
+          - [ubuntu-latest, bash]
+          - [macos-latest, bash]
       fail-fast: false
     defaults:
      run:
