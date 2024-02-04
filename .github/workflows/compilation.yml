@@ -3,9 +3,9 @@ name: CI
 on: 
   workflow_dispatch
 
-  env:
-    GIT_BASE: /opt/toolchains/dc/kos
-    KOS_PATH: /opt/toolchains/dc
+env:
+  GIT_BASE: /opt/toolchains/dc/kos
+  KOS_PATH: /opt/toolchains/dc
 
 on:
   push:
