@@ -7,7 +7,6 @@ env:
   GIT_BASE: /opt/toolchains/dc/kos
   KOS_PATH: /opt/toolchains/dc
 
-
 jobs:
   build:
     runs-on: ${{ matrix.os[0] }}
