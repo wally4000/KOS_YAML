@@ -5,7 +5,9 @@ on:
   pull_request:
   repository_dispatch:
     types: [run_build]
-
+env:
+  "echo GIT_BASE=/opt/toolchains/dc/kos" >> $GITHUB_ENV
+  "echo KOS_PATH=/opt/toolchains/dc" >> $GITHUB_ENV
 jobs:
   build:
     runs-on: ${{ matrix.os[0] }}
@@ -36,8 +38,7 @@ jobs:
         
     - name: Set ENV
       run: |
-       "echo GIT_BASE=/opt/toolchains/dc/kos" >> $GITHUB_ENV
-       "echo KOS_PATH=/opt/toolchains/dc" >> $GITHUB_ENV
+
         sudo mkdir -p ${KOS_PATH}
         
         sudo chmod -R 755 /opt/toolchains/dc
