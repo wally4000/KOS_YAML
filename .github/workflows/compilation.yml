@@ -2,15 +2,11 @@ name: CI
 
 on:
   workflow_dispatch
-  
+
 env: 
   GIT_BASE: /opt/toolchains/dc/kos
   KOS_PATH: /opt/toolchains/dc
 
-  # push:
-  # pull_request:
-  # repository_dispatch:
-  #   types: [run_build]
 
 jobs:
   build:
