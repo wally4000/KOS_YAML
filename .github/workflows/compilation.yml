@@ -36,8 +36,8 @@ jobs:
         
     - name: Set ENV
       run: |
-        export GIT_BASE=/opt/toolchains/dc/kos
-        export KOS_PATH=/opt/toolchains/dc
+       "echo GIT_BASE=/opt/toolchains/dc/kos" >> $GITHUB_ENV
+       "echo KOS_PATH=/opt/toolchains/dc" >> $GITHUB_ENV
         sudo mkdir -p ${KOS_PATH}
         
         sudo chmod -R 755 /opt/toolchains/dc
