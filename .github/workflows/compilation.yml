@@ -9,6 +9,7 @@ on:
 env:
   GIT_BASE: /opt/toolchains/dc/kos
   KOS_PATH: /opt/toolchains/dc
+  ARM_CC_IS_AVAILABLE : 0
 
 jobs:
   build:
@@ -58,6 +59,8 @@ jobs:
 
       - name: Build KOS
         run: |
+   
+
           cd ${GIT_BASE}
           mv ${GIT_BASE}/doc/environ.sh.sample ${GIT_BASE}/environ.sh
           source ${GIT_BASE}/environ.sh
