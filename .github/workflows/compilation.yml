@@ -65,7 +65,7 @@ jobs:
           mv ${GIT_BASE}/doc/environ.sh.sample ${GIT_BASE}/environ.sh
           source ${GIT_BASE}/environ.sh
           make -j$(getconf _NPROCESSORS_ONLN) 
-
+          make -j$(getconf _NPROCESSORS_ONLN) 
       - name: Prepare kos folder
         run: |
           tar -zcvf kos-${{ matrix.os[0] }}.tar.gz ${KOS_PATH}
