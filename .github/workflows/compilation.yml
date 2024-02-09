@@ -47,7 +47,7 @@ jobs:
           sudo mkdir -p ${KOS_PATH}
           sudo chmod -R 755 /opt/toolchains/dc
           sudo chown -R $(id -u):$(id -g) /opt/toolchains/dc
-          git clone https://github.com/kallistiOS/KallistiOS --depth=1 ${GIT_BASE}
+          git clone https://github.com/wally4000/KallistiOS --depth=1 ${GIT_BASE}
 
       - name: Build DC Toolchain
         run: | 
@@ -59,12 +59,10 @@ jobs:
 
       - name: Build KOS
         run: |
-   
-
           cd ${GIT_BASE}
           mv ${GIT_BASE}/doc/environ.sh.sample ${GIT_BASE}/environ.sh
           source ${GIT_BASE}/environ.sh
-          make -j$(getconf _NPROCESSORS_ONLN) 
+          cp ${GIT_BASE}/kernel/arch/dreamcast/sound/arm/stream.drv.prebuilt cp ${GIT_BASE}/kernel/arch/dreamcast/sound/arm/stream.drv
           make -j$(getconf _NPROCESSORS_ONLN) 
       - name: Prepare kos folder
         run: |
