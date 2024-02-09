@@ -19,6 +19,7 @@ jobs:
         os:
           - [ubuntu-latest, bash]
           - [macos-latest, bash]
+          - [macos-14, bash]
       fail-fast: false
     defaults:
       run:
